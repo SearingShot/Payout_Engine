@@ -6,9 +6,30 @@ This project can run on free tiers with:
 - Supabase Free project for Postgres.
 - Upstash Redis Free database for Celery broker/result backend.
 
+Current deployment:
+
+```text
+https://payout-engine-pehx.onrender.com/
+```
+
 ## 1. Create the free data services
 
-Create a Supabase project and copy the Postgres connection string. Use the transaction pooler URI if Supabase shows one, and keep `sslmode=require` if it is present.
+Create a Supabase project and copy a **pooler** Postgres connection string, not the direct connection string.
+
+Do not use a URL like this on Render:
+
+```text
+postgresql://postgres:<password>@db.<project-ref>.supabase.co:5432/postgres
+```
+
+Supabase direct database hosts are IPv6-only on free projects, and Render free web services cannot reach them. Use the Supabase pooler URL instead. It should look like one of these:
+
+```text
+postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:5432/postgres?sslmode=require
+postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:6543/postgres?sslmode=require
+```
+
+Prefer the session pooler on port `5432` for Django if Supabase gives you both options. The transaction pooler on port `6543` can also work for simple app traffic.
 
 Create an Upstash Redis database and copy the Redis URL. Use the TLS URL if provided.
 

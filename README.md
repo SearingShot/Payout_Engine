@@ -2,6 +2,8 @@
 
 Minimal payout engine for the Playto Founding Engineer Challenge 2026.
 
+Live deployment: https://payout-engine-pehx.onrender.com/
+
 ## Stack
 
 - Django 5 + Django REST Framework
@@ -36,6 +38,12 @@ API base:
 
 ```text
 http://localhost:8000/api/v1
+```
+
+Live API base:
+
+```text
+https://payout-engine-pehx.onrender.com/api/v1
 ```
 
 ## Local setup without Docker
@@ -93,3 +101,9 @@ For the concurrency test, PostgreSQL is the meaningful database because the impl
 ## Deployment
 
 See `DEPLOYMENT.md` for the free Render + Supabase + Upstash deployment path.
+
+Current hosted deployment:
+
+```text
+https://payout-engine-pehx.onrender.com/
+```
