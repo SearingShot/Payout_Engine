@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: payout-engine
+    runtime: docker
+    plan: free
+    autoDeployTrigger: commit
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: POSTGRES_SSL_REQUIRE
+        value: "True"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://*.onrender.com"
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false

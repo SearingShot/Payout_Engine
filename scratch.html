@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minimalist | Payout Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#f8f9fa",
+                        "on-primary": "#000000",
+                        "surface": "#000000",
+                        "background": "#000000",
+                        "surface-container": "#0a0a0a",
+                        "surface-container-low": "#121212",
+                        "surface-container-high": "#1a1a1a",
+                        "on-surface": "#f8f9fa",
+                        "on-surface-variant": "#a1a1aa",
+                        "outline": "#27272a",
+                        "outline-variant": "#3f3f46",
+                        "secondary-container": "#f8f9fa",
+                        "on-secondary-container": "#000000",
+                        "error": "#ef4444"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+            color: #f8f9fa;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .tracking-tight-custom {
+            letter-spacing: -0.04em;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-32 selection:bg-white selection:text-black">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border-none">
+<div class="flex items-center justify-between px-6 h-20 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center grayscale">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHqcUwofukG8Xq7n4If_LI7iV_jRyeoRjxpTNWr1T7VoMKA9nqeDsLWJr2MbqYlvDydixNaNpBIyDZytIYuwqozkxWwK_2ou3whNzHY4WxUDyq3RwSGUwe1Rq2lWGnJsY3UOZ8R76AxQOzDogRHT0s8_HLVawqyAjOqT71DYMz2Gq18QA6wmrTFMt7babmTuMKXMEYGsk9mq6cgpPJK3RZYgXley5JJwGMSs_zKOz1PZMPcBVUUW4roWkCctnm3e8Y6wmbxjmL0eE"/>
+</div>
+<span class="text-lg font-semibold tracking-tight text-white">Luminescent Void</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-white transition-colors p-2 active:scale-95 duration-200">
+            notifications
+        </button>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-6 py-12 space-y-16">
+<!-- Section 1: Balance Card -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 glass-panel p-10 rounded-[2.5rem] relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-inter text-[10px] uppercase tracking-[0.2em] font-semibold text-on-surface-variant mb-4">Available Balance</p>
+<h1 class="text-6xl font-light tracking-tight-custom text-white leading-none">
+                    ₹150,000
+                </h1>
+<div class="mt-12 flex items-center gap-12">
+<div>
+<p class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-on-surface-variant mb-2">Pending Balance</p>
+<p class="text-xl font-medium text-white/80">₹25,000</p>
+</div>
+<div class="h-8 w-[1px] bg-white/10"></div>
+<div>
+<p class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-on-surface-variant mb-2">Last Payout</p>
+<p class="text-xl font-medium text-white/80">Oct 21</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mini Stats -->
+<div class="bg-surface-container-low p-10 rounded-[2.5rem] flex flex-col justify-between border border-white/5">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-white bg-white/5 p-3 rounded-2xl">analytics</span>
+<span class="text-white font-medium text-sm">+12.5%</span>
+</div>
+<div>
+<p class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-on-surface-variant mb-2">Monthly Velocity</p>
+<p class="text-4xl font-light tracking-tight-custom">₹4.2M</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Primary Action -->
+<section>
+<button class="w-full bg-white text-black text-lg font-semibold py-7 rounded-[2rem] hover:bg-zinc-200 transition-all duration-300 active:scale-[0.99] flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+            Request Payout
+        </button>
+</section>
+<!-- Section 3: Recent Activity Ledger -->
+<section class="space-y-8">
+<div class="flex items-end justify-between px-2">
+<h2 class="text-2xl font-semibold tracking-tight text-white">Recent Activity</h2>
+<button class="text-[11px] font-bold uppercase tracking-[0.1em] text-on-surface-variant hover:text-white transition-colors">View Analytics</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-4">
+<thead>
+<tr class="text-on-surface-variant">
+<th class="px-8 pb-2 font-inter text-[10px] uppercase tracking-[0.2em] font-semibold">Date</th>
+<th class="px-8 pb-2 font-inter text-[10px] uppercase tracking-[0.2em] font-semibold">Type</th>
+<th class="px-8 pb-2 font-inter text-[10px] uppercase tracking-[0.2em] font-semibold">Amount</th>
+<th class="px-8 pb-2 font-inter text-[10px] uppercase tracking-[0.2em] font-semibold text-right">Status</th>
+</tr>
+</thead>
+<tbody class="space-y-4">
+<!-- Completed Row -->
+<tr class="bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300 border border-white/5">
+<td class="px-8 py-7 rounded-l-3xl text-white/90 font-medium text-sm">Oct 24, 2023</td>
+<td class="px-8 py-7">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-zinc-500">north_east</span>
+<span class="text-sm font-medium">Payout</span>
+</div>
+</td>
+<td class="px-8 py-7 font-semibold text-white text-sm">₹12,000.00</td>
+<td class="px-8 py-7 rounded-r-3xl text-right">
+<span class="bg-zinc-800 text-zinc-300 px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">Completed</span>
+</td>
+</tr>
+<!-- Processing Row -->
+<tr class="bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300">
+<td class="px-8 py-7 rounded-l-3xl text-white/90 font-medium text-sm">Oct 23, 2023</td>
+<td class="px-8 py-7">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-zinc-500">south_west</span>
+<span class="text-sm font-medium">Deposit</span>
+</div>
+</td>
+<td class="px-8 py-7 font-semibold text-white text-sm">₹45,000.00</td>
+<td class="px-8 py-7 rounded-r-3xl text-right">
+<span class="border border-white/20 text-white/60 px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">Processing</span>
+</td>
+</tr>
+<!-- Pending Row -->
+<tr class="bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300">
+<td class="px-8 py-7 rounded-l-3xl text-white/90 font-medium text-sm">Oct 22, 2023</td>
+<td class="px-8 py-7">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-zinc-500">north_east</span>
+<span class="text-sm font-medium">Payout</span>
+</div>
+</td>
+<td class="px-8 py-7 font-semibold text-white text-sm">₹8,500.00</td>
+<td class="px-8 py-7 rounded-r-3xl text-right">
+<span class="bg-zinc-900/50 text-zinc-600 px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">Pending</span>
+</td>
+</tr>
+<!-- Failed Row -->
+<tr class="bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300">
+<td class="px-8 py-7 rounded-l-3xl text-white/90 font-medium text-sm">Oct 20, 2023</td>
+<td class="px-8 py-7">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-zinc-500">north_east</span>
+<span class="text-sm font-medium">Payout</span>
+</div>
+</td>
+<td class="px-8 py-7 font-semibold text-white text-sm">₹15,200.00</td>
+<td class="px-8 py-7 rounded-r-3xl text-right">
+<span class="bg-red-950/30 text-red-500 px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">Failed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full pb-safe z-50 bg-black/95 backdrop-blur-xl border-t border-white/5">
+<div class="flex justify-around items-center w-full px-8 h-24">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center gap-1 text-white active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[9px] uppercase tracking-[0.15em] font-bold">Home</span>
+</a>
+<!-- Payments -->
+<a class="flex flex-col items-center justify-center gap-1 text-zinc-600 hover:text-white transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl">payments</span>
+<span class="text-[9px] uppercase tracking-[0.15em] font-bold">Payments</span>
+</a>
+<!-- Reports -->
+<a class="flex flex-col items-center justify-center gap-1 text-zinc-600 hover:text-white transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl">analytics</span>
+<span class="text-[9px] uppercase tracking-[0.15em] font-bold">Reports</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center gap-1 text-zinc-600 hover:text-white transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[9px] uppercase tracking-[0.15em] font-bold">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>
